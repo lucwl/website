@@ -13,6 +13,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  padding-bottom: 5rem;
 }
 
 .wrap {
@@ -34,8 +35,13 @@ nav {
 }
 
 a {
+  color: #fa7268;
   text-decoration: none;
-  color: #000000;
+  transition: color 0.25s;
+}
+
+a:hover {
+  color: #c62368;
 }
 
 .navlinks {
@@ -45,6 +51,14 @@ a {
   display: flex;
   align-items: center;
   gap: 2rem;
+}
+
+.navlinks a {
+  color: #000000;
+}
+
+.navlinks i {
+  font-size: 2rem;
 }
 
 .title {
@@ -92,6 +106,7 @@ header {
   background-size: cover;
   color: white;
   height: 450px;
+  pointer-events: none;
 }
 
 .bg {
@@ -118,22 +133,49 @@ header {
   font-size: 2rem;
 }
 
+.icon-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 2rem 0;
+  row-gap: 2rem;
+}
+
+.icon-container span {
+  display: flex;
+  align-items: center;
+}
+
+.icon-container span i {
+  font-size: 2rem;
+  color: #fa7268;
+  margin-right: 0.5rem;
+}
+
 #project-container {
   margin-top: 1rem;
   display: grid;
   border-radius: 4px;
-  grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1rem;
 }
 
-#project-container span {
+#project-container a {
   display: flex;
-  align-items: center;  
+  align-items: center;
+  color: #000000;
 }
 
-#project-container span img {
+#project-container a {
+  font-weight: 800;
+}
+
+#project-container a img {
   border-radius: 50%;
   height: 30px;
   width: 30px;
   margin-right: 0.5rem;
+}
+
+.author-link {
+
 }
