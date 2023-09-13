@@ -6,6 +6,12 @@
     <title>Luc Wallace</title>
     <link rel="stylesheet" href="./index.css" />
     <script src="./index.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js"
+      integrity="sha512-KqUc2WMPF/gxte9xVjVE4TIt1LMUTidO3BrcItFg0Ro24I7pGNzgcXdnWdezNY+8T0/JEmdC79MuwYn+8UdOqw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,24 +26,51 @@
           <img src="https://avatars.githubusercontent.com/luc-wallace" />
           luc.
         </li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul> 
+        <li><a href="#about">about</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
     </nav>
     <header>
       <div class="wrap header-wrapper">
         <img src="https://avatars.githubusercontent.com/luc-wallace" />
         <div>
           <h1>Luc Wallace</h1>
-          <h2>Student & Full-stack developer</h2>
+          <h2>student & full-stack developer</h2>
         </div>
       </div>
     </header>
     <main>
       <section id="about" class="wrap">
-        <h1 class="header-text">About</h1>
-        <p>I am a student studying Computer Science.<p>
+        <h1 class="header-text">about.</h1>
+        <p>I am a student studying Computer Science.</p>
+        <p></p>
+      </section>
+
+      <section id="projects" class="wrap">
+        <h1 class="header-text">projects.</h1>
+        <p>my most popular projects on github:</p>
+        <div id="project-container"></div>
+      </section>
+      <section id="contact" class="wrap">
+        <h1 class="header-text">contact.</h1>
+        <p>Email: lucwallace06@gmail.com</p>
+        <p>
+          <a
+            href="https://github.com/luc-wallace"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Personal GitHub
+          </a>
+          <a
+            href="https://github.com/thefakequake"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Main GitHub
+          </a>
+        </p>
       </section>
     </main>
   </body>

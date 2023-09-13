@@ -9,6 +9,12 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
 .wrap {
   width: 60%;
   margin: 0 auto;
@@ -102,12 +108,32 @@ header {
   left: 0;
   height: 5px;
   border-radius: 2px;
-  background: linear-gradient(111.3deg, #FA7268 9.6%, #C62368 93.6%);
+  background: linear-gradient(111.3deg, #fa7268 9.6%, #c62368 93.6%);
 }
-
 
 .header-text {
   position: relative;
   width: max-content;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+#project-container {
+  margin-top: 1rem;
+  display: grid;
+  border-radius: 4px;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 0.5rem;
+}
+
+#project-container span {
+  display: flex;
+  align-items: center;  
+}
+
+#project-container span img {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin-right: 0.5rem;
 }
