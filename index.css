@@ -102,7 +102,7 @@ a {
   color: var(--text-primary);
 }
 
-h2 {
+.content h2 {
   display: flex;
   cursor: default;
   align-items: center;
