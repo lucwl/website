@@ -1,177 +1,288 @@
 html,
 body {
   margin: 0;
-  padding: 0;
   width: 100%;
+  height: 100%;
 }
 
-* {
-  font-family: "Inter", sans-serif;
+:root {
+  --background: #121212;
+  --accent: #ff6f61;
+  --text-primary: #fff;
+  --text-secondary: #a5a5a5;
 }
 
-main {
+body {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: var(--background);
+  color: var(--text-primary);
   display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  padding-bottom: 5rem;
-}
-
-.wrap {
-  width: 60%;
-  margin: 0 auto;
-}
-
-p,
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-}
-
-nav {
-  width: 100%;
-  height: 5rem;
 }
 
 a {
-  color: #fa7268;
   text-decoration: none;
-  transition: color 0.25s;
+  color: var(--accent);
 }
 
-a:hover {
-  color: #c62368;
+.section {
+  flex: 1;
 }
 
-.navlinks {
-  height: 100%;
-  list-style: none;
-  padding: 0;
+.aside {
+  display: flex;
+  align-items: center;
+  padding: 5rem 2rem 5rem 12rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  animation: 0.5s appear ease-in-out both;
+}
+
+.content {
+  padding: 5rem 10rem 5rem 0;
+  overflow-y: auto;
+}
+
+.content > div {
+  animation: 0.5s appear ease-in-out both;
+}
+
+.content > div:nth-child(1) {
+  animation-delay: 100ms;
+}
+
+.content > div:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.content > div:nth-child(5) {
+  animation-delay: 300ms;
+}
+
+.content > div:nth-child(7) {
+  animation-delay: 400ms;
+}
+
+.logo {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
-.navlinks a {
-  color: #000000;
-}
-
-.navlinks i {
-  font-size: 2rem;
-}
-
-.title {
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-right: auto;
-}
-
-.title img {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-}
-
-.header {
-  position: relative;
-}
-
-.header-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  height: 100%;
-  margin-top: -5rem;
-}
-
-.header-wrapper img {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  margin-right: 1rem;
-}
-
-.header-wrapper h1 {
+.logo h1 {
   font-size: 3rem;
 }
 
-header {
+.logo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.fill {
+  width: max-content;
   position: relative;
-  padding: 1rem 0;
-  background-image: url("data:image/svg+xml,%3Csvg id='visual' viewBox='0 0 900 450' width='900' height='450' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1'%3E%3Cpath d='M0 148L21.5 143.2C43 138.3 86 128.7 128.8 124.8C171.7 121 214.3 123 257.2 133.3C300 143.7 343 162.3 385.8 171C428.7 179.7 471.3 178.3 514.2 170.3C557 162.3 600 147.7 642.8 146.8C685.7 146 728.3 159 771.2 160C814 161 857 150 878.5 144.5L900 139L900 0L878.5 0C857 0 814 0 771.2 0C728.3 0 685.7 0 642.8 0C600 0 557 0 514.2 0C471.3 0 428.7 0 385.8 0C343 0 300 0 257.2 0C214.3 0 171.7 0 128.8 0C86 0 43 0 21.5 0L0 0Z' fill='%23fa7268'%3E%3C/path%3E%3Cpath d='M0 136L21.5 131.7C43 127.3 86 118.7 128.8 111.5C171.7 104.3 214.3 98.7 257.2 104.8C300 111 343 129 385.8 138.5C428.7 148 471.3 149 514.2 145.7C557 142.3 600 134.7 642.8 130.2C685.7 125.7 728.3 124.3 771.2 120C814 115.7 857 108.3 878.5 104.7L900 101L900 0L878.5 0C857 0 814 0 771.2 0C728.3 0 685.7 0 642.8 0C600 0 557 0 514.2 0C471.3 0 428.7 0 385.8 0C343 0 300 0 257.2 0C214.3 0 171.7 0 128.8 0C86 0 43 0 21.5 0L0 0Z' fill='%23ef5f67'%3E%3C/path%3E%3Cpath d='M0 113L21.5 111C43 109 86 105 128.8 101.3C171.7 97.7 214.3 94.3 257.2 97.2C300 100 343 109 385.8 112.3C428.7 115.7 471.3 113.3 514.2 110.5C557 107.7 600 104.3 642.8 97.3C685.7 90.3 728.3 79.7 771.2 82.7C814 85.7 857 102.3 878.5 110.7L900 119L900 0L878.5 0C857 0 814 0 771.2 0C728.3 0 685.7 0 642.8 0C600 0 557 0 514.2 0C471.3 0 428.7 0 385.8 0C343 0 300 0 257.2 0C214.3 0 171.7 0 128.8 0C86 0 43 0 21.5 0L0 0Z' fill='%23e34c67'%3E%3C/path%3E%3Cpath d='M0 52L21.5 54.8C43 57.7 86 63.3 128.8 66.2C171.7 69 214.3 69 257.2 64.7C300 60.3 343 51.7 385.8 49.7C428.7 47.7 471.3 52.3 514.2 58.8C557 65.3 600 73.7 642.8 73.5C685.7 73.3 728.3 64.7 771.2 58C814 51.3 857 46.7 878.5 44.3L900 42L900 0L878.5 0C857 0 814 0 771.2 0C728.3 0 685.7 0 642.8 0C600 0 557 0 514.2 0C471.3 0 428.7 0 385.8 0C343 0 300 0 257.2 0C214.3 0 171.7 0 128.8 0C86 0 43 0 21.5 0L0 0Z' fill='%23d53867'%3E%3C/path%3E%3Cpath d='M0 55L21.5 51.3C43 47.7 86 40.3 128.8 38.7C171.7 37 214.3 41 257.2 44.5C300 48 343 51 385.8 50.3C428.7 49.7 471.3 45.3 514.2 39.3C557 33.3 600 25.7 642.8 23.8C685.7 22 728.3 26 771.2 31.5C814 37 857 44 878.5 47.5L900 51L900 0L878.5 0C857 0 814 0 771.2 0C728.3 0 685.7 0 642.8 0C600 0 557 0 514.2 0C471.3 0 428.7 0 385.8 0C343 0 300 0 257.2 0C214.3 0 171.7 0 128.8 0C86 0 43 0 21.5 0L0 0Z' fill='%23c62368'%3E%3C/path%3E%3C/svg%3E");
-  background-size: cover;
-  color: white;
-  height: 450px;
-  pointer-events: none;
+  display: inline-block;
 }
 
-.bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.header-text::before {
+.fill::before {
+  opacity: 0.5;
   content: "";
   position: absolute;
-  top: 100%;
-  width: 200%;
-  left: 0;
-  height: 5px;
-  border-radius: 2px;
-  background: linear-gradient(111.3deg, #fa7268 9.6%, #c62368 93.6%);
+  height: 100%;
+  background-color: var(--accent);
+  z-index: -1;
+  transition: width 0.2s ease-out;
+  width: var(--fill-width, 0);
 }
 
-.header-text {
-  position: relative;
-  width: max-content;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+.value {
+  color: var(--text-primary);
 }
 
-.icon-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 2rem 0;
-  row-gap: 2rem;
-}
-
-.icon-container span {
+h2 {
   display: flex;
+  cursor: default;
   align-items: center;
 }
 
-.icon-container span i {
-  font-size: 2rem;
-  color: #fa7268;
+h2 i {
+  height: max-content;
+  margin-right: 1rem;
+  color: var(--accent);
+  transition: font-size 0.25s;
+}
+
+h2:hover > i {
+  font-size: 1.75rem;
+}
+
+.github h3 {
+  margin: 0;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+h2 a {
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+h2 a i {
+  color: var(--text-secondary);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.title * {
+  margin: 0;
+}
+
+.typing {
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.typing::after {
+  content: "";
+  height: 10px;
+  border-right: 3px solid var(--accent);
+  animation: blinking 1s steps(1, end) infinite;
+}
+
+hr {
+  border-bottom: 1px solid #fff;
+  margin: 2rem 0;
+  animation: fade reverse 0.5s;
+}
+
+.skills {
+  display: flex;
+}
+
+.skills ul {
+  list-style: none;
+  margin: 0.5rem 0 0 0;
+}
+
+.skills li::before {
+  content: "•";
+  color: var(--accent);
+  width: 1rem;
+  margin: 0 0.5rem 0 -1.5rem;
+}
+
+.skills > div {
+  flex: 1;
+}
+
+.skills h3 {
+  margin: 0;
+}
+
+.loading {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 0.5rem;
+  background-color: #000000;
+  opacity: 0.75;
+  border-radius: 0.5rem;
+}
+
+.loading i {
+  font-size: 1.25rem;
   margin-right: 0.5rem;
 }
 
-#project-container {
-  margin-top: 1rem;
-  display: grid;
-  border-radius: 4px;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 1rem;
-}
-
-#project-container a {
+.projects {
   display: flex;
-  align-items: center;
-  color: #000000;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-#project-container a {
+.projects h2 {
+  margin: 0;
+}
+
+.project h2 {
+  margin: 0;
+}
+
+.project {
+  display: flex;
+  gap: 2rem;
+}
+
+.project img {
+  border: 2px var(--accent) solid;
+  align-self: start;
+  width: 50%;
+  border-radius: 1rem;
+}
+
+.project > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.tags {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.tags span {
+  width: max-content;
+  border-radius: 0.5rem;
+  background-color: var(--accent);
+  color: var(--background);
+  padding: 0.25rem 1rem;
   font-weight: 800;
 }
 
-#project-container a img {
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  margin-right: 0.5rem;
+.project.minor {
+  flex-direction: column;
+  gap: 0;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.75;
+  }
+
+  to {
+    opacity: 0;
+  }
 }

@@ -4,149 +4,272 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luc Wallace</title>
-    <link rel="stylesheet" href="./index.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js"
-      integrity="sha512-KqUc2WMPF/gxte9xVjVE4TIt1LMUTidO3BrcItFg0Ro24I7pGNzgcXdnWdezNY+8T0/JEmdC79MuwYn+8UdOqw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="index.js" defer></script>
   </head>
   <body>
-    <nav>
-      <div class="navlinks wrap">
-        <span class="title">
-          <img src="https://avatars.githubusercontent.com/luc-wallace" />
-          luc.
-        </span>
-        <a href="/#about">about</a>
-        <a href="/#experience">experience</a>
-        <a href="/#projects">projects</a>
-        <a
-          href="https://github.com/luc-wallace/luc-wallace.github.io"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fa-brands fa-github"></i>
-        </a>
-      </div>
-    </nav>
-    <header>
-      <div class="wrap header-wrapper">
+    <div class="loading" id="loading" style="display: none">
+      <i class="fa-brands fa-github"></i>
+      Loading GitHub Data...
+    </div>
+    <div class="section aside">
+      <div class="logo">
         <img src="https://avatars.githubusercontent.com/luc-wallace" />
-        <div>
+        <span class="title">
           <h1>Luc Wallace</h1>
-          <h2>student & full-stack developer</h2>
+          <div id="fill" class="fill">
+            <h2 data-text="Student & full-stack developer" class="typing"></h2>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="section content" id="content">
+      <div class="about">
+        <h2>
+          <i class="fa-solid fa-comment"></i>
+          About
+        </h2>
+        <p>
+          I am a 17-year old student and developer passionate about computer
+          science. I am able to fully design and realise interactive
+          experiences, both on the server and client end. Fully self-taught, I
+          aspire to learn new skills and expand my knowledge of developing
+          software. I am looking to learn C++ in the near future.
+        </p>
+        <p>
+          I am currently studying Maths, Further Maths, Computer Science and
+          French.
+          <br />
+          My EPQ title: "Is Quantum Computing a Threat to Digital Security?"
+        </p>
+        <p>
+          This website was built with vanilla HTML, CSS and JS. It automatically
+          caches GitHub data.
+        </p>
+      </div>
+      <hr />
+      <div>
+        <h2>
+          <i class="fa-solid fa-code"></i>
+          Skills
+        </h2>
+        <div class="skills">
+          <div>
+            <h3>Languages</h3>
+            <ul>
+              <li>Python</li>
+              <li>Go</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>HTML & CSS</li>
+              <li>PHP</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Libraries</h3>
+            <ul>
+              <li>React</li>
+              <li>Next.js</li>
+              <li>Pyscript</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Databases</h3>
+            <ul>
+              <li>MySQL</li>
+              <li>MongoDB</li>
+              <li>SQLite</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Software</h3>
+            <ul>
+              <li>VSCode</li>
+              <li>Git & GitHub</li>
+              <li>Figma</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </header>
-    <main>
-      <section id="about" class="wrap">
-        <h1 class="header-text">about.</h1>
-        <p>
-          I am a student studying A-Level Computer Science, this website was
-          made as coursework. The code can be found
-          <a
-            href="https://github.com/luc-wallace/luc-wallace.github.io"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            here.
+      <hr />
+      <div class="github">
+        <h2>
+          <i class="fa-brands fa-github"></i>
+          GitHub
+          <a href="https://github.com/luc-wallace">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
-        </p>
-        <br />
-        <p>
-          This website uses many web technologies, such as HTML, CSS and JS.
-        </p>
-      </section>
-      <section id="experience" class="wrap">
-        <h1 class="header-text">experience.</h1>
-        <p>I am proficient in these languages and tools:</p>
-        <div class="icon-container">
-          <span>
-            <i class="fa-brands fa-python"></i>
-            <p>Python</p>
-          </span>
-          <span>
-            <i class="fa-brands fa-square-js"></i>
-            <p>JavaScript/TypeScript</p>
-          </span>
-          <span>
-            <i class="fa-brands fa-golang"></i>
-            <p>Go</p>
-          </span>
-          <span>
-            <i class="fa-solid fa-hashtag"></i>
-            <p>C#</p>
-          </span>
-          <span>
-            <i class="fa-solid fa-database"></i>
-            <p>SQL</p>
-          </span>
-          <span>
-            <i class="fa-brands fa-envira"></i>
-            <p>MongoDB</p>
-          </span>
-          <span>
-            <i class="fa-brands fa-html5"></i>
-            <p>HTML</p>
-          </span>
-          <span>
-            <i class="fa-brands fa-css3-alt"></i>
-            <p>CSS</p>
-          </span>
-          <span>
-            <i class="fa-brands fa-react"></i>
-            <p>React</p>
-          </span>
-          <span>
-            <i class="fa-solid fa-n"></i>
-            <p>Next.js</p>
-          </span>
-          <span>
-            <i class="fa-brands fa-git-alt"></i>
-            <p>Git</p>
-          </span>
-          <span>
-            <i class="fa-solid fa-code"></i>
-            <p>Visual Studio Code</p>
-          </span>
+        </h2>
+        <h3>
+          Bio:
+          <span class="value" id="bio"></span>
+        </h3>
+        <h3>
+          Followers:
+          <span class="value" id="followers"></span>
+        </h3>
+        <h3>
+          Following:
+          <span class="value" id="following"></span>
+        </h3>
+        <h3>
+          Location:
+          <span class="value" id="location"></span>
+        </h3>
+        <h3>
+          Repositories:
+          <span class="value" id="repos"></span>
+        </h3>
+        <h3>
+          Stars:
+          <span class="value" id="stars"></span>
+        </h3>
+      </div>
+      <hr />
+      <div class="projects">
+        <h2>
+          <i class="fa-solid fa-diagram-project"></i>
+          Projects
+        </h2>
+        <div class="project">
+          <img
+            src="img/codecrack.png"
+            alt="A screenshot of my mastermind spinoff, codecrack."
+          />
+          <div>
+            <h2>
+              Codecrack
+              <a href="https://github.com/luc-wallace/codecrack">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </h2>
+            <p>
+              A two-player online multiplayer spinoff of the board game
+              Mastermind, made with Go and React.
+            </p>
+            <a href="https://github.com/luc-wallace/codecrack">Repository</a>
+            <a href="https://www.youtube.com/watch?v=IVzXDt7tmTY">
+              Video showcase
+            </a>
+            <div class="tags">
+              <span>School</span>
+              <span>Go</span>
+              <span>JS/TS</span>
+              <span>React</span>
+            </div>
+          </div>
         </div>
-        <p>
-          In the future, I aspire to learn Rust and Elixir, and expand my
-          knowledge of AI.
-        </p>
-      </section>
-      <section id="projects" class="wrap">
-        <h1 class="header-text">projects.</h1>
-        <p>
-          I have released a
-          <a
-            href="https://pypi.org/project/pypartpicker/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            PyPi package.
-          </a>
-        </p>
-        <br />
-        <p>My most popular projects on GitHub:</p>
-        <div id="project-container"></div>
-      </section>
-    </main>
+        <div class="project">
+          <img
+            src="img/footbook.png"
+            alt="A screenshot of my football match booking system, footbook."
+          />
+          <div>
+            <h2>
+              Footbook
+              <a href="https://github.com/luc-wallace/footbook">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </h2>
+            <p>A football match booking system, built with PHP and MySQL.</p>
+            <a href="https://github.com/luc-wallace/footbook">Repository</a>
+            <a href="https://youtu.be/f0kx_i9ZmFQ">Video showcase</a>
+            <div class="tags">
+              <span>School</span>
+              <span>PHP</span>
+              <span>MySQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="project">
+          <img
+            src="img/rsa-simulator.png"
+            alt="A screenshot of my rsa simulator website."
+          />
+          <div>
+            <h2>
+              RSA Simulator
+              <a href="https://github.com/luc-wallace/rsa-simulator">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </h2>
+            <p>
+              An online, interactive RSA simulator built using Python and
+              Pyscript.
+            </p>
+            <a href="https://github.com/luc-wallace/rsa-simulator">
+              Repository
+            </a>
+            <a href="https://langtonhugeprimes.vercel.app">Link to site</a>
+            <div class="tags">
+              <span>School</span>
+              <span>Python</span>
+              <span>Pycript</span>
+            </div>
+          </div>
+        </div>
+        <div class="project">
+          <img
+            src="img/cs-soc.png"
+            alt="A screenshot of the Langton CS Society website."
+          />
+          <div>
+            <h2>
+              CS Society Website
+              <a href="https://github.com/CSLangtonSoc/website">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </h2>
+            <p>The Langton CS Society website, made with Jekyll SSG.</p>
+            <a href="https://github.com/CSLangtonSoc/website">Repository</a>
+            <a href="https://langtoncompsci.tech">Link to site</a>
+            <div class="tags">
+              <span>School</span>
+              <span>Jekyll</span>
+            </div>
+          </div>
+        </div>
+        <div class="project minor">
+          <h2>Minor projects</h2>
+          <ul>
+            <li>
+              <a href="https://github.com/luc-wallace/dfa">DFA minimise</a>
+              - an implementation of the DFA minimise algorithm
+            </li>
+            <li>
+              <a href="https://github.com/luc-wallace/project-euler">
+                Project Euler
+              </a>
+              - my projecteuler.net solutions
+            </li>
+            <li>
+              <a href="https://github.com/luc-wallace/alevelphysicsonline-dl">
+                alevelphysicsonline-dl
+              </a>
+              - video downloader for alevelphysicsonline.com
+            </li>
+            <li>
+              <a href="https://github.com/luc-wallace/corbett-maths-dl">
+                corbett-maths-dl
+              </a>
+              - web scraper and PDF downloaded for Corbett Maths
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
