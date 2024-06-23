@@ -22,6 +22,14 @@ body {
   display: flex;
 }
 
+::-moz-selection {
+  background: #89403b;
+}
+
+::selection {
+  background: #89403b;
+}
+
 a {
   text-decoration: none;
   color: var(--accent);
