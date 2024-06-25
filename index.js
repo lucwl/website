@@ -10,7 +10,7 @@ async function getGithubData() {
     if (isNaN(date)) {
       return await reloadData()
     }
-    if ((new Date() - date) / 1000 > 150) {
+    if ((new Date() - date) / 1000 > 180) {
       return await reloadData()
     }
 
@@ -59,16 +59,25 @@ getGithubData().then(([profile, repos]) => {
   )
 
   const reposContainer = document.getElementById("recent-repos")
-  repos.slice(0, 6).forEach((repo) => {
-    const html = /*html*/ `
+  repos
+    .map((repo) => ({ ...repo, pushed_at: new Date(repo.pushed_at) }))
+    .sort((a, b) => b.pushed_at - a.pushed_at)
+    .slice(0, 6)
+    .forEach((repo) => {
+      console.log(repo)
+      const html = /*html*/ `
         <p>
-          (${new Date(repo.pushed_at).toLocaleDateString()})
+          (${new Date(repo.pushed_at).toLocaleString("en-GB", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+          })})
           <a href="${repo.html_url}">${repo.name}</a>
         </p>
       `
-    // sanitise HTML just in case to prevent XSS
-    reposContainer.innerHTML += DOMPurify.sanitize(html)
-  })
+      // sanitise HTML just in case to prevent XSS
+      reposContainer.innerHTML += DOMPurify.sanitize(html)
+    })
 })
 
 const scrollContainer = document.getElementById("content")
