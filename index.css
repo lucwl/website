@@ -56,6 +56,7 @@ a {
 .content {
   padding: 5rem 10rem 5rem 50%;
   overflow-y: auto;
+  --animation-delay: 200ms;
 }
 
 .content > div {
@@ -63,19 +64,19 @@ a {
 }
 
 .content > div:nth-child(1) {
-  animation-delay: 100ms;
+  animation-delay: var(--animation-delay);
 }
 
 .content > div:nth-child(3) {
-  animation-delay: 200ms;
+  animation-delay: calc(2 * var(--animation-delay));
 }
 
 .content > div:nth-child(5) {
-  animation-delay: 300ms;
+  animation-delay: calc(3 * var(--animation-delay));
 }
 
 .content > div:nth-child(7) {
-  animation-delay: 400ms;
+  animation-delay: calc(4 * var(--animation-delay));
 }
 
 .logo {
@@ -190,7 +191,7 @@ h2 a i {
 hr {
   border-bottom: 1px solid #fff;
   margin: 2rem 0;
-  animation: fade reverse 0.5s;
+  animation: fade reverse 1s;
 }
 
 .skills {
