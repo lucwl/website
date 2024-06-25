@@ -426,3 +426,19 @@ hr {
     padding: 0.25rem 0.5rem;
   }
 }
+
+@media (prefers-reduced-motion) {
+  * {
+    animation: none !important;
+    opacity: 1 !important;
+    transition-duration: 0s !important;
+  }
+
+  .typing {
+    width: max-content;
+  }
+
+  .typing::after {
+    display: none;
+  }
+}

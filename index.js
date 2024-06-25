@@ -1,4 +1,8 @@
 // @ts-nocheck
+const isReduced =
+  window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
+  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
+
 async function getGithubData() {
   const lastAccessed = localStorage.getItem("lastAccessed")
   if (lastAccessed) {
@@ -39,7 +43,6 @@ async function reloadData() {
   localStorage.setItem("lastAccessed", timestamp.toISOString())
   localStorage.setItem("profileData", JSON.stringify(profile))
   localStorage.setItem("repoData", JSON.stringify(repos))
-  loading.style = "animation: 1s fade"
   setTimeout(() => [(loading.style = "display: none;")], 1000)
   return [profile, repos]
 }
@@ -56,24 +59,25 @@ getGithubData().then(([profile, repos]) => {
   )
 
   const reposContainer = document.getElementById("recent-repos")
-  repos
-    .slice(0, 6)
-    .forEach((repo) => {
-      const html = /*html*/ `
+  repos.slice(0, 6).forEach((repo) => {
+    const html = /*html*/ `
         <p>
           (${new Date(repo.pushed_at).toLocaleDateString()})
           <a href="${repo.html_url}">${repo.name}</a>
         </p>
       `
-      // sanitise HTML just in case to prevent XSS
-      reposContainer.innerHTML += DOMPurify.sanitize(html)
-    })
+    // sanitise HTML just in case to prevent XSS
+    reposContainer.innerHTML += DOMPurify.sanitize(html)
+  })
 })
 
 const scrollContainer = document.getElementById("content")
 const textFill = document.getElementById("fill")
 document.getElementById("fill")
 scrollContainer.addEventListener("scroll", () => {
+  if (isReduced) {
+    return
+  }
   const scrollHeight =
     scrollContainer.scrollHeight - scrollContainer.clientHeight
   const scrollTop = scrollContainer.scrollTop
@@ -84,9 +88,15 @@ scrollContainer.addEventListener("scroll", () => {
 })
 
 const els = document.getElementsByClassName("typing")
+
 for (const el of els) {
   let index = 0
   const text = el.dataset.text
+
+  if (isReduced) {
+    el.textContent = text
+    continue
+  }
 
   function type() {
     if (index < text.length) {
