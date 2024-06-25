@@ -6,7 +6,7 @@ async function getGithubData() {
     if (isNaN(date)) {
       return await reloadData()
     }
-    if ((new Date() - date) / 1000 > 120) {
+    if ((new Date() - date) / 1000 > 150) {
       return await reloadData()
     }
 
@@ -54,6 +54,20 @@ getGithubData().then(([profile, repos]) => {
     (sum, repo) => sum + repo.stargazers_count,
     0
   )
+
+  const reposContainer = document.getElementById("recent-repos")
+  repos
+    .slice(0, 6)
+    .forEach((repo) => {
+      const html = /*html*/ `
+        <p>
+          (${new Date(repo.pushed_at).toLocaleDateString()})
+          <a href="${repo.html_url}">${repo.name}</a>
+        </p>
+      `
+      // sanitise HTML just in case to prevent XSS
+      reposContainer.innerHTML += DOMPurify.sanitize(html)
+    })
 })
 
 const scrollContainer = document.getElementById("content")

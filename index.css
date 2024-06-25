@@ -132,10 +132,29 @@ h2:hover > i {
   font-size: 1.75rem;
 }
 
-.github h3 {
+.github h4 {
   margin: 0;
   font-weight: 400;
   color: var(--accent);
+}
+
+.github > div {
+  display: flex;
+  gap: 2rem;
+}
+
+.repos {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.repos p {
+  margin: 0;
+}
+
+.stats {
+  width: max-content;
 }
 
 h2 a {
@@ -360,6 +379,15 @@ hr {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
+
+  .github > div {
+    flex-direction: column;
+  }
+
+  .stats,
+  .top-repos {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 570px) {
@@ -371,7 +399,7 @@ hr {
     font-size: 1.65rem;
   }
 
-  h2 {
+  .project h2 {
     font-size: 1rem;
   }
 
@@ -381,6 +409,7 @@ hr {
 
   .logo {
     width: 100%;
+    gap: 0.5rem;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -390,11 +419,6 @@ hr {
   .logo img {
     width: 100px;
     height: 100px;
-  }
-
-  h2 {
-    font-size: 1.15rem;
-    word-wrap: break-word;
   }
 
   .tags span {

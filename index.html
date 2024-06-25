@@ -31,6 +31,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.5/purify.min.js"
+      integrity="sha512-JatFEe90fJU2nrgf27fUz2hWRvdYrSlTEV8esFuqCtfiqWN8phkS1fUl/xCfYyrLDQcNf3YyS0V9hG7U4RHNmQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="index.js" defer></script>
   </head>
   <body>
@@ -130,30 +136,38 @@
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </h2>
-        <h3>
-          Bio:
-          <span class="value" id="bio"></span>
-        </h3>
-        <h3>
-          Followers:
-          <span class="value" id="followers"></span>
-        </h3>
-        <h3>
-          Following:
-          <span class="value" id="following"></span>
-        </h3>
-        <h3>
-          Location:
-          <span class="value" id="location"></span>
-        </h3>
-        <h3>
-          Repositories:
-          <span class="value" id="repos"></span>
-        </h3>
-        <h3>
-          Stars:
-          <span class="value" id="stars"></span>
-        </h3>
+        <div>
+          <div class="stats">
+            <h3>Stats</h3>
+            <h4>
+              Bio:
+              <span class="value" id="bio"></span>
+            </h4>
+            <h4>
+              Followers:
+              <span class="value" id="followers"></span>
+            </h4>
+            <h4>
+              Following:
+              <span class="value" id="following"></span>
+            </h4>
+            <h4>
+              Location:
+              <span class="value" id="location"></span>
+            </h4>
+            <h4>
+              Repositories:
+              <span class="value" id="repos"></span>
+            </h4>
+            <h4>
+              Stars:
+              <span class="value" id="stars"></span>
+            </h4>
+          </div>
+          <div class="repos" id="recent-repos">
+            <h3>Recent Activity</h3>
+          </div>
+        </div>
       </div>
       <hr />
       <div class="projects">
