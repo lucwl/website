@@ -139,6 +139,10 @@ h2:hover > i {
   color: var(--accent);
 }
 
+.github h2 {
+  margin-bottom: 0;
+}
+
 .github > div {
   display: flex;
   gap: 2rem;
