@@ -64,7 +64,6 @@ getGithubData().then(([profile, repos]) => {
     .sort((a, b) => b.pushed_at - a.pushed_at)
     .slice(0, 6)
     .forEach((repo) => {
-      console.log(repo)
       const html = /*html*/ `
         <p>
           (${new Date(repo.pushed_at).toLocaleString("en-GB", {
