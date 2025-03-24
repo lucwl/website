@@ -1,4 +1,4 @@
-# luc-wallace.github.io
+# lucwl.github.io
 
 My personal portfolio, made with vanilla HTML, CSS & JS.
 
