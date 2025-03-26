@@ -35,9 +35,9 @@ async function reloadData() {
   const loading = document.getElementById("loading")
   loading.style = "display: block;"
   console.log("RELOADED DATA")
-  let res = await fetch("https://api.github.com/users/luc-wallace")
+  let res = await fetch("https://api.github.com/users/lucwl")
   const profile = await res.json()
-  res = await fetch("https://api.github.com/users/luc-wallace/repos")
+  res = await fetch("https://api.github.com/users/lucwl/repos")
   const repos = await res.json()
   const timestamp = new Date()
   localStorage.setItem("lastAccessed", timestamp.toISOString())
