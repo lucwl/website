@@ -1,4 +1,4 @@
-# personal-site
+# website
 
 My personal portfolio, made with vanilla HTML, CSS & JS.
 
