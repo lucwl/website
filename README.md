@@ -1,4 +1,4 @@
-# lucwl.github.io
+# personal-site
 
 My personal portfolio, made with vanilla HTML, CSS & JS.
 
