@@ -1,0 +1,53 @@
+baseURL = 'https://lucwl.uk/'
+languageCode = 'en-gb'
+title = 'Luc Wallace'
+theme = 'rusty-typewriter-better'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
+[params.rtwt.side.home]
+taxonomies = ['tags','series']
+countTaxonomy = 4
+
+[taxonomies]
+tag = 'tags'
+topic = 'topics'
+series = 'series'
+
+[params.author]
+name = 'Luc Wallace'
+
+[[menus.main]]
+name = 'Posts'
+pageRef = '/posts'
+weight = 1
+
+[[menus.main]]
+name = 'Projects'
+pageRef = '/projects'
+weight = 2
+
+[[menus.main]]
+name = 'About'
+pageRef = '/about'
+weight = 2
+
+# search related stuff ================
+
+[outputFormats]
+ [outputFormats.SearchIndex]
+  mediaType = "application/json"
+  baseName = "searchindex"
+  isPlainText = true
+  notAlternative = true
+
+[mediaTypes]
+ [mediaTypes."application/json"]
+  suffixes = ["json"]
+
+[outputs]
+ home = ["HTML", "SearchIndex"]
+
+# =====================================

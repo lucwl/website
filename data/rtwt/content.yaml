@@ -1,0 +1,9 @@
+home:
+  greetings: 'Luc Wallace'
+  text: "Computer Science student and programmer from the UK "
+  authorImgSrc: "https://avatars.githubusercontent.com/lucwl"
+side:
+  home:
+social:
+  github: https://github.com/lucwl
+  youtube: https://youtube.com/@lucwallace
