@@ -210,6 +210,11 @@ a {
   color: var(--text-colour);
 }
 
+a:hover .highlight {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-colour);
+}
+
 .align-right {
   margin-left: auto;
   width: max-content;
@@ -260,11 +265,15 @@ p {
   gap: 0.15rem;
 }
 
+.action:hover {
+  text-decoration: underline var(--text-colour) 2px;
+}
+
 .theme-toggle {
   cursor: pointer;
-  margin: 0;
+  margin: 0 0 0 auto;
   width: max-content;
-  margin-left: auto;
+  color: var(--text-colour);
 }
 
 @media screen and (max-width: 1000px) {
