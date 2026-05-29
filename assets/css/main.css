@@ -171,7 +171,7 @@ div.project-header h3 {
 }
 
 div.diagram {
-  width: 100%;
+  width: calc(100% - 2rem);
   height: 12rem;
   border: 4px solid var(--accent-colour);
   padding: 1rem;
@@ -190,6 +190,7 @@ div.diagram pre {
 
 code {
   font-weight: 600;
+  overflow-x: hidden;
 }
 
 ul.posts {
@@ -272,6 +273,17 @@ p {
   }
 }
 
+@media screen and (max-width: 750px) {
+  div.project-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  div.project-header h3 {
+    margin-left: 0;
+  }
+}
+
 @media screen and (max-width: 625px) {
   div.subtitle {
     width: auto;
@@ -282,15 +294,6 @@ p {
     flex-direction: column;
   }
 
-  div.project-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  div.project-header h3 {
-    margin-left: 0;
-  }
-
   div.subtitle h2 {
     margin-left: 0;
     margin-right: auto;
@@ -298,6 +301,18 @@ p {
 
   ul.posts li {
     width: 100%;
+  }
+
+  div.diagram pre {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  div.diagram {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    height: auto;
   }
 }
 

@@ -68,10 +68,10 @@
 }
 </code><code><span class="highlight">entry</span>:
   <span class="highlight">%cmp_min</span> = <span class="highlight">icmp</span> <span class="highlight">slt</span> <span class="highlight">i32</span> <span class="highlight">%value</span>, <span class="highlight">%min</span>
-  <span class="highlight">br</span> <span class="highlight">i1</span> <span class="highlight">%cmp_min</span>, <span class="highlight">label</span> <span class="highlight">%return_min</span>, <span class="highlight">label</span> <span class="highlight">%check_max</span>
+  <span class="highlight">br</span> <span class="highlight">i1</span> <span class="highlight">%cmp_min</span>, <span class="highlight">label</span> <span class="highlight">%ret_min</span>, <span class="highlight">label</span> <span class="highlight">%check_max</span>
 <span class="highlight">check_max</span>:
   <span class="highlight">%cmp_max</span> = <span class="highlight">icmp</span> <span class="highlight">sgt</span> <span class="highlight">i32</span> <span class="highlight">%value</span>, <span class="highlight">%max</span>
-  <span class="highlight">br</span> <span class="highlight">i1</span> <span class="highlight">%cmp_max</span>, <span class="highlight">label</span> <span class="highlight">%return_max</span>, <span class="highlight">label</span> <span class="highlight">%return_value</span>
+  <span class="highlight">br</span> <span class="highlight">i1</span> <span class="highlight">%cmp_max</span>, <span class="highlight">label</span> <span class="highlight">%ret_max</span>, <span class="highlight">label</span> <span class="highlight">%ret_value</span>
 <span class="highlight">return_min</span>:
   <span class="highlight">ret</span> <span class="highlight">i32</span> <span class="highlight">%min</span>
 <span class="highlight">return_max</span>:
