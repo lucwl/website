@@ -1,0 +1,128 @@
+{{ define "title" }}Home{{ end }} {{ define "header" }}
+<meta
+  name="description"
+  content="Computer Science Student & Software Engineer"
+/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Luc Wallace" />
+<meta
+  property="og:description"
+  content="Computer Science Student & Software Engineer"
+/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+
+{{ end }} {{ define "main" }}
+<section>
+  {{- partial "components/themetoggle.html" . -}}
+  <div class="line-divide"></div>
+  <h1 class="no-margin">Luc Wallace</h1>
+  <div class="subtitle">
+    <h2><span class="highlight">Computer Science Student</span></h2>
+    <h2>&& <span class="highlight">Software Engineer</span></h2>
+  </div>
+
+  <div class="line-divide"></div>
+
+  <ul class="socials">
+    <li>
+      <span class="fa6-brands--square-github"></span>
+      <a href="https://github.com/lucwl"
+        >github.com/<span class="highlight">lucwl</span></a
+      >
+    </li>
+    <li>
+      <span class="el--linkedin"></span>
+      <a href="https://linkedin.com/in/lucwallace"
+        >linkedin.com/in/<span class="highlight">lucwallace</span></a
+      >
+    </li>
+    <li>
+      <span class="ic--sharp-email"></span>
+      <span>
+        <span class="highlight">me</span> (at)
+        <span class="highlight">lucwallace</span> (dot)
+        <span class="highlight">com</span>
+      </span>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h1>My Work</h1>
+  <ul class="project-container">
+    <li class="project">
+      <div class="project-header">
+        <a href="https://github.com/lucwl/cluck">
+          <h2>lucwl / <span class="highlight">cluck</span></h2>
+        </a>
+        <h3>A tiny C compiler built in Haskell</h3>
+      </div>
+      <div class="diagram">
+        <pre>
+          <code><span class="highlight">int</span> <span class="highlight">clamp</span>(<span class="highlight">int</span> value, <span class="highlight">int</span> min, <span class="highlight">int</span> max) {
+    <span class="highlight">if</span> (value < min) {
+        <span class="highlight">return</span> min;
+    } <span class="highlight">else</span> <span class="highlight">if</span> (value > max) {
+        <span class="highlight">return</span> max;
+    }
+    <span class="highlight">return</span> value;
+}
+</code><code><span class="highlight">entry</span>:
+  <span class="highlight">%cmp_min</span> = <span class="highlight">icmp</span> <span class="highlight">slt</span> <span class="highlight">i32</span> <span class="highlight">%value</span>, <span class="highlight">%min</span>
+  <span class="highlight">br</span> <span class="highlight">i1</span> <span class="highlight">%cmp_min</span>, <span class="highlight">label</span> <span class="highlight">%return_min</span>, <span class="highlight">label</span> <span class="highlight">%check_max</span>
+<span class="highlight">check_max</span>:
+  <span class="highlight">%cmp_max</span> = <span class="highlight">icmp</span> <span class="highlight">sgt</span> <span class="highlight">i32</span> <span class="highlight">%value</span>, <span class="highlight">%max</span>
+  <span class="highlight">br</span> <span class="highlight">i1</span> <span class="highlight">%cmp_max</span>, <span class="highlight">label</span> <span class="highlight">%return_max</span>, <span class="highlight">label</span> <span class="highlight">%return_value</span>
+<span class="highlight">return_min</span>:
+  <span class="highlight">ret</span> <span class="highlight">i32</span> <span class="highlight">%min</span>
+<span class="highlight">return_max</span>:
+  <span class="highlight">ret</span> <span class="highlight">i32</span> <span class="highlight">%max</span>
+<span class="highlight">return_value</span>:
+  <span class="highlight">ret</span> <span class="highlight">i32</span> <span class="highlight">%value</span>
+</code>
+        </pre>
+      </div>
+    </li>
+    <li class="project">
+      <div class="project-header">
+        <a href="https://github.com/lucwl/olfactml">
+          <h2>lucwl / <span class="highlight">olfactml</span></h2>
+        </a>
+        <h3>TinyML scent classification for Arduino</h3>
+      </div>
+      <div class="diagram">
+        {{- partial "svg/olfactml-1.html" . -}} {{- partial
+        "svg/olfactml-2.html" . -}}
+      </div>
+    </li>
+    <li class="project">
+      <div class="project-header">
+        <a href="https://github.com/lucwl/wikitrace">
+          <h2>lucwl / <span class="highlight">wikitrace</span></h2>
+        </a>
+        <h3>Pathfinding on Wikipedia via NLP</h3>
+      </div>
+      <div class="diagram">
+        {{- partial "svg/wikitrace-1.html" . -}} {{- partial
+        "svg/wikitrace-2.html" . -}}
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {{ range (where .Site.RegularPages "Section" "posts") }}
+    <li>
+      <a href="{{ .Permalink }}"
+        ><h2>
+          {{ .Params.Index }} / <span class="highlight">{{ .Title }}</span>
+        </h2></a
+      >
+      {{ .Date.Format "Jan 2, 2006" }}
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

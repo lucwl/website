@@ -1,0 +1,33 @@
+{{ define "title" }} {{ .Params.Index }} / {{ .Title }} {{ end }} {{ define
+"header" }}
+
+<meta name="description" content="{{- partial "components/summary.html" . -}}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ .Params.Index }} / {{ .Title }}" />
+<meta property="og:description" content="{{- partial "components/summary.html" . -}}" />
+<meta property="article:published_time" content="{{ time .Date }}" />
+
+  <link
+    rel="preload"
+    href="/fonts/ppneuemontreal-book.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+
+{{ end }} {{ define "main" }}
+<article>
+  <div class="action-container">
+    <a class="action" href="/"><span class="fontisto--caret-left"></span> Back</a>
+    {{- partial "components/themetoggle.html" . -}}
+  </div>
+  <div class="line-divide"></div>
+  <header>
+    <h1>{{ .Params.Index }} / <span class="highlight">{{ .Title }}</span></h1>
+    <time>{{ .Date.Format "January 2, 2006" }}</time>
+  </header>
+  <div class="line-divide"></div>
+
+  <section class="start">{{ .Content }}</section>
+</article>
+{{ end }}
